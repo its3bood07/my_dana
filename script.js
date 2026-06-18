@@ -8,7 +8,7 @@ const CONFIG = {
 
   memories: [
     { type:"image", src:"assets/3dda.JPEG",      title:"اول عضة منك",                                    date:"2024-02-01", description:"كان شعور بجنن , ما عمري انعضيت وما عمري انبسطت وانا بنعض , بس بنفس الوقت مش مستوعب كمية السعادة اللي اجتني منها و مع انها بتوجع للامانة" },
-    { type:"image", src:"assets/one.jpg",         title:"الصورة اللي منها بلش كلشي✨",                    date:"2024-02-24", description:"هاي كانت اول ستريك لالك بوجهك , اشوفه كامل , واول ستريك احفظه بالشات , ف يب .روحي عالصورة اللي بعدها" },
+    { type:"image", src:"assets/one.JPG",         title:"الصورة اللي منها بلش كلشي✨",                    date:"2024-02-24", description:"هاي كانت اول ستريك لالك بوجهك , اشوفه كامل , واول ستريك احفظه بالشات , ف يب .روحي عالصورة اللي بعدها" },
     { type:"image", src:"assets/shakespeare.PNG", title:"!! بحس اشتقتلكك🌸",                             date:"2024-02-25", description:"ولككك اوووففف ما اقواها كانت , اللي هو احا كيف بتقدري تكتبي كل هاد بهاد الفن وبهاي الطريقة , جد بحبك" },
     { type:"image", src:"assets/six.png",         title:"دانا بالحجاب !",                                date:"2024-01-28", description:"هاي كانت اول مرة اشوفك فيها بحجاب , كنتي بتجنني ! كثير بتجنني جد كنت دايما اتخيله عليكي وبس لبستيه طلع احلى من ما كنت متخيل , اتمنيت لو انك لبستيه" },
     { type:"image", src:"assets/call123456.PNG",  title:"اقوة سكرين لمكالمة بيني وبينك",                 date:"2024-04-10  ", description:"بعرفششش كيف زبطناها انا وانتي بس والله كفو علينا" },
@@ -50,19 +50,19 @@ const CONFIG = {
   ],
 
   playlist: [
-    { name:"Heather",               artist:"Conan Gray",           meaning:"كل ما اسمعها بتذكر لما طلبتي مني الجاكيت , وانا زي الغبي ما كنت اعرف",         file:"assets/Heather.MP3", cover:"assets/cover1.JPG"  },
-    { name:"Meen ysadak",           artist:"الضبع",                meaning:"أغنية الفيلم اللي حكيتيلي احضره ولسا ما حضرته",    file:"assets/Meen ysadak.mp3",              cover:"assets/cover2.PNG"  },
+    { name:"Heather",               artist:"Conan Gray",           meaning:"كل ما اسمعها بتذكر لما طلبتي مني الجاكيت , وانا زي الغبي ما كنت اعرف",         file:"assets/Heather.mp3", cover:"assets/cover1.JPG"  },
+    { name:"Meen ysadak",           artist:"الضبع",                meaning:"أغنية الفيلم اللي حكيتيلي احضره ولسا ما حضرته",    file:"assets/Meen_ysadak.mp3",              cover:"assets/cover2.PNG"  },
     { name:"Apocalypse",            artist:"Cigarettes After Sex", meaning:"الأغنية اللي بترجعني لأحلى لحظة باللويبدة",        file:"assets/Apocalypse.mp3",               cover:"assets/cover3.PNG"  },
-    { name:"Romantic Homicide",     artist:"d4vd",                 meaning:"كنت بدي أنساكِ بس ما زبطت معي",                    file:"assets/Romantic Homicide.mp3",        cover:"assets/cover4.jpg"  },
-    { name:"We Fell in Love in October", artist:"girl in red",     meaning:"هاي بتذكرني فيكِ الصراحة",                          file:"assets/we fell in love in october.mp3", cover:"assets/cover5.jpg" },
-    { name:"Glimpse of Us",         artist:"Joji",                 meaning:"أنتِ حكيتِ إنك صرتِ تسمعيها",                      file:"assets/Glimpse of Us.mp3",            cover:"assets/cover6.jpg"  },
-    { name:"Die for You",           artist:"Joji / TUYO / Mora",   meaning:"جوجي مبدع بتوصيل الإحساس",                         file:"assets/Die for You.mp3",                cover:"assets/cover7.jpg"  },
+    { name:"Romantic Homicide",     artist:"d4vd",                 meaning:"كنت بدي أنساكِ بس ما زبطت معي",                    file:"assets/Romantic_Homicide.mp3",        cover:"assets/cover4.jpg"  },
+    { name:"We Fell in Love in October", artist:"girl in red",     meaning:"هاي بتذكرني فيكِ الصراحة",                          file:"assets/we_fell_in_love_in_october.mp3", cover:"assets/cover5.jpg" },
+    { name:"Glimpse of Us",         artist:"Joji",                 meaning:"أنتِ حكيتِ إنك صرتِ تسمعيها",                      file:"assets/Glimpse_of_Us.mp3",            cover:"assets/cover6.jpg"  },
+    { name:"Die for You",           artist:"Joji / TUYO / Mora",   meaning:"جوجي مبدع بتوصيل الإحساس",                         file:"assets/Die_for_You.mp3",                cover:"assets/cover7.jpg"  },
     { name:"Her",                   artist:"JVKE",                 meaning:"كانت تشتغل لحالها براسي كل ما أشوفكِ",             file:"assets/Her.mp3",                      cover:"assets/cover8.JPEG" },
     { name:"Sunsetz",               artist:"Cigarettes After Sex", meaning:"بعرفش ليش حطتها بس ليش لا",                       file:"assets/Sunsetz.mp3",                  cover:"assets/cover9.JPEG" },
     { name:"Atnasyna",              artist:"—",                    meaning:"كنتِ مرة مصورة فيديو عليها وكنتِ كثير حلوة",       file:"assets/Atnasyna.mp3",                 cover:"assets/cover10.jpg" },
-    { name:"Shem el yasmeen",       artist:"مشروع ليلى",           meaning:"هيك صرت أحس بعد ما تقبلت إن كل شيء بيننا مستحيل", file:"assets/Shem el yasmeen.mp3",          cover:"assets/cover11.JPEG"},
-    { name:"The night we met",      artist:"Lord Huron", meaning:"لما طلعنا طلعة بيسترو , هاي اللي كانت براسي لما روحتي وانا بتطلع عليكي", file:"assets/The night we met.mp3", cover:"assets/five.jpg" },
-    { name:"ma to7shneesh",         artist:"امير عيد", meaning:"امنية مستحيل تتحقق للامانة ", file:"assets/ma to7shneesh.mp3", cover:"assets/kay3.jpeg" },
+    { name:"Shem el yasmeen",       artist:"مشروع ليلى",           meaning:"هيك صرت أحس بعد ما تقبلت إن كل شيء بيننا مستحيل", file:"assets/Shem_el_yasmeen.mp3",          cover:"assets/cover11.JPEG"},
+    { name:"The night we met",      artist:"Lord Huron", meaning:"لما طلعنا طلعة بيسترو , هاي اللي كانت براسي لما روحتي وانا بتطلع عليكي", file:"assets/The_night_we_met.mp3", cover:"assets/five.jpg" },
+    { name:"ma to7shneesh",         artist:"امير عيد", meaning:"امنية مستحيل تتحقق للامانة ", file:"assets/ma_to7shneesh.mp3", cover:"assets/kay3.jpeg" },
     { name:"wa7ashteny",            artist:"امير عيد", meaning:"  -بنحب بعض بس الحب مش كفاية ...-", file:"assets/wa7ashteny.mp3", cover:"assets/o2.jpg" },
   ],
 
