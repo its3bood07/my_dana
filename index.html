@@ -1,0 +1,298 @@
+<<<<<<< HEAD
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dana Fahmawi 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260525-5">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- LOGIN -->
+<div class="page active" id="page-login">
+  <div class="login-glow"></div>
+  <div class="login-box">
+    <p class="login-eyebrow">اشي بيني وبينك عالذيق</p>
+    <h1 class="login-title">مكان موجودلك دايما<br><em>لما تحتاجيه</em></h1>
+    <p class="login-sub">وبس الك 🤍</p>
+    <div class="login-field">
+      <input type="password" id="pw-input" placeholder="ادخلي كلمة السر" onkeydown="if(event.key==='Enter')checkPw()">
+    </div>
+    <button class="btn-enter" onclick="checkPw()">فوتيييي ❤️</button>
+    <p class="login-error" id="pw-error"></p>
+  </div>
+</div>
+
+<!-- HOME -->
+<div class="page" id="page-home">
+  <div class="home-photo-wrap">
+    <div class="home-photo-frame">
+      <img src="images/main.JPG.JPG" alt="Dana" onerror="this.style.display='none'">
+    </div>
+    <div class="home-photo-glow"></div>
+  </div>
+  <h1 class="home-name">Dana <em>Fahmawi</em></h1>
+  <p class="home-tagline">My only and forever person 🤍</p>
+  <div class="counter-strip">
+    <div class="counter-item"><span class="counter-num" id="cnt-days">0</span><span class="counter-label">أيام</span></div>
+    <div class="counter-item"><span class="counter-num" id="cnt-hours">0</span><span class="counter-label">ساعات</span></div>
+    <div class="counter-item"><span class="counter-num" id="cnt-minutes">0</span><span class="counter-label">دقايق</span></div>
+  </div>
+  <nav class="home-nav">
+    <div class="nav-card" onclick="showPage('memories')"><span class="nav-card-icon">📸</span><span class="nav-card-label">صور بحبها</span></div>
+    <div class="nav-card" onclick="showPage('playlist')"><span class="nav-card-icon">🎵</span><span class="nav-card-label">أغاني أنتِ فيها</span></div>
+    <div class="nav-card" onclick="showPage('letters')"><span class="nav-card-icon">🔒</span><span class="nav-card-label">نوتس الك</span></div>
+    <div class="nav-card" onclick="showPage('login');stopPlayer()"><span class="nav-card-icon">🚪</span><span class="nav-card-label">باي باي ببوتي الصغيرة</span></div>
+  </nav>
+</div>
+
+<!-- MEMORIES -->
+<div class="page" id="page-memories">
+  <button class="btn-back" onclick="showPage('home')">← رجوع</button>
+  <div class="page-header">
+    <p class="page-eyebrow">لحظات حلوة وككا بنفس الوقت </p>
+    <h2 class="page-title">كل ما تبقى <em>منك</em></h2>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</div>
+
+<!-- PLAYLIST -->
+<div class="page" id="page-playlist">
+  <button class="btn-back" onclick="showPage('home')">← رجوع</button>
+  <div class="page-header">
+    <p class="page-eyebrow">أغاني إلها دخل فيكِ</p>
+    <h2 class="page-title">أغاني <em>أنتِ فيها</em></h2>
+  </div>
+  <div class="playlist-list" id="playlist-list"></div>
+</div>
+
+<!-- LETTERS -->
+<div class="page" id="page-letters">
+  <button class="btn-back" onclick="showPage('home')">← رجوع</button>
+  <div class="page-header">
+    <p class="page-eyebrow">يا اهلا بقسم الفقرات والجرايد</p>
+    <h2 class="page-title">رسائل كان - وما زال - لازم تشوفيها <em></em></h2>
+  </div>
+  <div class="letters-grid" id="letters-grid"></div>
+</div>
+
+<!-- PLAYER BAR -->
+<div id="player-bar">
+  <div class="player-bg-cover" id="player-bg-cover"></div>
+  <div class="player-top">
+    <div class="player-meta">
+      <div class="player-thumb" id="player-thumb">🎵</div>
+      <div class="player-info">
+        <div class="player-name" id="player-name">—</div>
+        <div class="player-artist" id="player-artist">—</div>
+      </div>
+    </div>
+    <div class="player-controls">
+      <button class="ctrl-btn" onclick="prevTrack()">⏮</button>
+      <button class="ctrl-btn play-pause" id="btn-play" onclick="togglePlay()">▶</button>
+      <button class="ctrl-btn" onclick="nextTrack()">⏭</button>
+    </div>
+    <div class="volume-wrap">
+      <span class="volume-icon">🔈</span>
+      <input type="range" class="vol-slider" min="0" max="1" step="0.05" value="1" oninput="setVolume(this.value)">
+    </div>
+  </div>
+  <div class="player-progress">
+    <span class="progress-time" id="time-cur">0:00</span>
+    <div class="progress-bar-wrap" id="progress-wrap" onclick="seekTo(event)">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <span class="progress-time" id="time-dur">0:00</span>
+  </div>
+</div>
+
+<audio id="audio-player" preload="metadata"></audio>
+
+<!-- LIGHTBOX — مع إطار اللوحة والوردة -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content-wrap">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+
+    <!-- إطار اللوحة الخشبية -->
+    <div class="lightbox-frame">
+      <div class="lightbox-frame-inner">
+        <img id="lightbox-img" src="" alt="" style="display:none;">
+        <video id="lightbox-vid" controls style="display:none; max-width:100%; max-height:55vh; border-radius:3px;"></video>
+      </div>
+    </div>
+
+    <div class="lightbox-details">
+      <h4 id="lightbox-title"></h4>
+      <p id="lightbox-desc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- LETTER MODAL -->
+<div class="letter-modal" id="letter-modal" onclick="closeLetterModal(event)">
+  <div class="letter-modal-content">
+    <button class="letter-modal-close" onclick="closeLetterModal()">✕</button>
+    <h3 class="letter-modal-title" id="letter-modal-title"></h3>
+    <p class="letter-modal-date" id="letter-modal-date"></p>
+    <p class="letter-modal-body" id="letter-modal-body"></p>
+  </div>
+</div>
+
+  <script src="script.js?v=20260526-1"></script>
+</body>
+=======
+<!DOCTYPE html>
+<html lang="ar" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dana Fahmawi 💕</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css?v=20260525-5">
+</head>
+<body>
+
+<canvas id="particles"></canvas>
+
+<!-- LOGIN -->
+<div class="page active" id="page-login">
+  <div class="login-glow"></div>
+  <div class="login-box">
+    <p class="login-eyebrow">اشي بيني وبينك عالذيق</p>
+    <h1 class="login-title">مكان موجودلك دايما<br><em>لما تحتاجيه</em></h1>
+    <p class="login-sub">وبس الك 🤍</p>
+    <div class="login-field">
+      <input type="password" id="pw-input" placeholder="ادخلي كلمة السر" onkeydown="if(event.key==='Enter')checkPw()">
+    </div>
+    <button class="btn-enter" onclick="checkPw()">فوتيييي ❤️</button>
+    <p class="login-error" id="pw-error"></p>
+  </div>
+</div>
+
+<!-- HOME -->
+<div class="page" id="page-home">
+  <div class="home-photo-wrap">
+    <div class="home-photo-frame">
+      <img src="images/main.JPG.JPG" alt="Dana" onerror="this.style.display='none'">
+    </div>
+    <div class="home-photo-glow"></div>
+  </div>
+  <h1 class="home-name">Dana <em>Fahmawi</em></h1>
+  <p class="home-tagline">My only and forever person 🤍</p>
+  <div class="counter-strip">
+    <div class="counter-item"><span class="counter-num" id="cnt-days">0</span><span class="counter-label">أيام</span></div>
+    <div class="counter-item"><span class="counter-num" id="cnt-hours">0</span><span class="counter-label">ساعات</span></div>
+    <div class="counter-item"><span class="counter-num" id="cnt-minutes">0</span><span class="counter-label">دقايق</span></div>
+  </div>
+  <nav class="home-nav">
+    <div class="nav-card" onclick="showPage('memories')"><span class="nav-card-icon">📸</span><span class="nav-card-label">صور بحبها</span></div>
+    <div class="nav-card" onclick="showPage('playlist')"><span class="nav-card-icon">🎵</span><span class="nav-card-label">أغاني أنتِ فيها</span></div>
+    <div class="nav-card" onclick="showPage('letters')"><span class="nav-card-icon">🔒</span><span class="nav-card-label">نوتس الك</span></div>
+    <div class="nav-card" onclick="showPage('login');stopPlayer()"><span class="nav-card-icon">🚪</span><span class="nav-card-label">باي باي ببوتي الصغيرة</span></div>
+  </nav>
+</div>
+
+<!-- MEMORIES -->
+<div class="page" id="page-memories">
+  <button class="btn-back" onclick="showPage('home')">← رجوع</button>
+  <div class="page-header">
+    <p class="page-eyebrow">لحظات حلوة وككا بنفس الوقت </p>
+    <h2 class="page-title">كل ما تبقى <em>منك</em></h2>
+  </div>
+  <div class="gallery" id="gallery"></div>
+</div>
+
+<!-- PLAYLIST -->
+<div class="page" id="page-playlist">
+  <button class="btn-back" onclick="showPage('home')">← رجوع</button>
+  <div class="page-header">
+    <p class="page-eyebrow">أغاني إلها دخل فيكِ</p>
+    <h2 class="page-title">أغاني <em>أنتِ فيها</em></h2>
+  </div>
+  <div class="playlist-list" id="playlist-list"></div>
+</div>
+
+<!-- LETTERS -->
+<div class="page" id="page-letters">
+  <button class="btn-back" onclick="showPage('home')">← رجوع</button>
+  <div class="page-header">
+    <p class="page-eyebrow">يا اهلا بقسم الفقرات والجرايد</p>
+    <h2 class="page-title">رسائل كان - وما زال - لازم تشوفيها <em></em></h2>
+  </div>
+  <div class="letters-grid" id="letters-grid"></div>
+</div>
+
+<!-- PLAYER BAR -->
+<div id="player-bar">
+  <div class="player-bg-cover" id="player-bg-cover"></div>
+  <div class="player-top">
+    <div class="player-meta">
+      <div class="player-thumb" id="player-thumb">🎵</div>
+      <div class="player-info">
+        <div class="player-name" id="player-name">—</div>
+        <div class="player-artist" id="player-artist">—</div>
+      </div>
+    </div>
+    <div class="player-controls">
+      <button class="ctrl-btn" onclick="prevTrack()">⏮</button>
+      <button class="ctrl-btn play-pause" id="btn-play" onclick="togglePlay()">▶</button>
+      <button class="ctrl-btn" onclick="nextTrack()">⏭</button>
+    </div>
+    <div class="volume-wrap">
+      <span class="volume-icon">🔈</span>
+      <input type="range" class="vol-slider" min="0" max="1" step="0.05" value="1" oninput="setVolume(this.value)">
+    </div>
+  </div>
+  <div class="player-progress">
+    <span class="progress-time" id="time-cur">0:00</span>
+    <div class="progress-bar-wrap" id="progress-wrap" onclick="seekTo(event)">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <span class="progress-time" id="time-dur">0:00</span>
+  </div>
+</div>
+
+<audio id="audio-player" preload="metadata"></audio>
+
+<!-- LIGHTBOX — مع إطار اللوحة والوردة -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content-wrap">
+    <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+
+    <!-- إطار اللوحة الخشبية -->
+    <div class="lightbox-frame">
+      <div class="lightbox-frame-inner">
+        <img id="lightbox-img" src="" alt="" style="display:none;">
+        <video id="lightbox-vid" controls style="display:none; max-width:100%; max-height:55vh; border-radius:3px;"></video>
+      </div>
+    </div>
+
+    <div class="lightbox-details">
+      <h4 id="lightbox-title"></h4>
+      <p id="lightbox-desc"></p>
+    </div>
+  </div>
+</div>
+
+<!-- LETTER MODAL -->
+<div class="letter-modal" id="letter-modal" onclick="closeLetterModal(event)">
+  <div class="letter-modal-content">
+    <button class="letter-modal-close" onclick="closeLetterModal()">✕</button>
+    <h3 class="letter-modal-title" id="letter-modal-title"></h3>
+    <p class="letter-modal-date" id="letter-modal-date"></p>
+    <p class="letter-modal-body" id="letter-modal-body"></p>
+  </div>
+</div>
+
+  <script src="script.js?v=20260526-1"></script>
+</body>
+>>>>>>> f832211 (add images and videos)
+</html>
