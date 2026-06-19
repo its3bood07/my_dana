@@ -60,7 +60,7 @@ const CONFIG = {
     { name:"Her",                   artist:"JVKE",                 meaning:"كانت تشتغل لحالها براسي كل ما أشوفكِ",             file:"assets/Her.mp3",                      cover:"assets/cover8.jpeg" },
     { name:"Sunsetz",               artist:"Cigarettes After Sex", meaning:"بعرفش ليش حطتها بس ليش لا",                       file:"songs/Sunsetz.mp3",                  cover:"assets/cover9.jpeg" },
     { name:"Atnasyna",              artist:"—",                    meaning:"كنتِ مرة مصورة فيديو عليها وكنتِ كثير حلوة",       file:"songs/Atnasyna.mp3",                 cover:"assets/cover10.jpg" },
-    { name:"Shem el yasmeen",       artist:"مشروع ليلى",           meaning:"هيك صرت أحس بعد ما تقبلت إن كل شيء بيننا مستحيل", file:"songs/Shem_el_yasmeen.mp3",          cover:"assets/cover11.jpeg"},
+    { name:"Shem el yasmeen",       artist:"مشروع ليلى",           meaning:"هيك صرت أحس بعد ما تقبلت إن كل شيء بيننا مستحيل", file:"assets/Shem_el_yasmeen.mp3",          cover:"images/cover11.jpeg"},
     { name:"The night we met",      artist:"Lord Huron", meaning:"لما طلعنا طلعة بيسترو , هاي اللي كانت براسي لما روحتي وانا بتطلع عليكي", file:"assets/The_night_we_met.mp3", cover:"assets/five.jpg" },
     { name:"ma to7shneesh",         artist:"امير عيد", meaning:"امنية مستحيل تتحقق للامانة ", file:"assets/ma_to7shneesh.mp3", cover:"images/kay3.jpeg" },
     { name:"wa7ashteny",            artist:"امير عيد", meaning:"  -بنحب بعض بس الحب مش كفاية ...-", file:"songs/wa7ashteny.mp3", cover:"images/o2.JPG" },
