@@ -140,13 +140,13 @@ const FALLBACK_LETTERS = [
   window.addEventListener('resize', resize);
 
   function addPetals(){
-    const count = Math.min(22, Math.max(8, Math.floor(innerWidth / 180)));
+    const count = Math.min(8, Math.max(3, Math.floor(innerWidth / 350)));
     for(let i=0;i<count;i++){
       pts.push({
         x: rand(0, innerWidth),
         y: rand(-80, innerHeight + 40),
-        r: rand(1.5, 3.2),
-        speed: rand(0.18, 0.42),
+        r: rand(2.5, 4.5),
+        speed: rand(0.4, 0.75),
         drift: rand(-0.18, 0.18),
         sway: rand(0, Math.PI * 2),
         alpha: rand(0.08, 0.18),
@@ -155,7 +155,7 @@ const FALLBACK_LETTERS = [
     }
   }
 
-  setInterval(addPetals, 420);
+  setInterval(addPetals, 1400);
 
   (function draw(){
     ctx.clearRect(0, 0, innerWidth, innerHeight);
@@ -166,21 +166,53 @@ const FALLBACK_LETTERS = [
       p.sway += 0.04;
       const glow = 0.6 + 0.4 * Math.sin(p.sway * 1.8);
       const alpha = p.alpha * glow;
+
       ctx.save();
       ctx.globalAlpha = alpha;
       ctx.globalCompositeOperation = 'screen';
       ctx.translate(p.x, p.y);
-      ctx.rotate(Math.sin(p.sway) * 0.25);
-      const petal = ctx.createRadialGradient(0, 0, 0, 0, 0, p.r * 5);
-      petal.addColorStop(0, 'rgba(255,255,255,0.95)');
-      petal.addColorStop(0.25, p.hue + '0.78)');
-      petal.addColorStop(0.65, p.hue + '0.24)');
-      petal.addColorStop(1, 'rgba(255,255,255,0)');
-      ctx.fillStyle = petal;
+      ctx.rotate(p.sway * 0.5);
+
+      const petalCount = 5;
+      const petalLen = p.r * 3.4;
+      const petalWidth = p.r * 1.6;
+
+      for(let i = 0; i < petalCount; i++){
+        ctx.save();
+        ctx.rotate((Math.PI * 2 / petalCount) * i);
+
+        const petal = ctx.createRadialGradient(0, petalLen * 0.4, 0, 0, petalLen * 0.4, petalLen);
+        petal.addColorStop(0, 'rgba(255,255,255,0.9)');
+        petal.addColorStop(0.3, p.hue + '0.85)');
+        petal.addColorStop(0.75, p.hue + '0.4)');
+        petal.addColorStop(1, 'rgba(255,255,255,0)');
+
+        ctx.fillStyle = petal;
+        ctx.beginPath();
+        ctx.moveTo(0, 0);
+        ctx.bezierCurveTo(
+          petalWidth, petalLen * 0.25,
+          petalWidth * 0.6, petalLen * 0.9,
+          0, petalLen
+        );
+        ctx.bezierCurveTo(
+          -petalWidth * 0.6, petalLen * 0.9,
+          -petalWidth, petalLen * 0.25,
+          0, 0
+        );
+        ctx.fill();
+        ctx.restore();
+      }
+
+      const center = ctx.createRadialGradient(0, 0, 0, 0, 0, p.r * 1.1);
+      center.addColorStop(0, 'rgba(255,255,255,0.95)');
+      center.addColorStop(0.5, p.hue + '0.7)');
+      center.addColorStop(1, 'rgba(255,255,255,0)');
+      ctx.fillStyle = center;
       ctx.beginPath();
-      ctx.ellipse(0, 0, p.r * 1.8, p.r * 2.6, 0, 0, Math.PI * 2);
-      ctx.ellipse(0, 0, p.r * 2.6, p.r * 1.8, Math.PI / 5, 0, Math.PI * 2);
+      ctx.arc(0, 0, p.r * 1.1, 0, Math.PI * 2);
       ctx.fill();
+
       ctx.restore();
     });
     requestAnimationFrame(draw);
