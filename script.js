@@ -56,14 +56,14 @@ const CONFIG = {
     { name:"Romantic Homicide",     artist:"d4vd",                 meaning:"كنت بدي أنساكِ بس ما زبطت معي",                    file:"songs/Romantic_Homicide.mp3",        cover:"assets/cover4.jpg"  },
     { name:"We Fell in Love in October", artist:"girl in red",     meaning:"هاي بتذكرني فيكِ الصراحة",                          file:"assets/we_fell_in_love_in_october.mp3", cover:"images/cover5.JPG" },
     { name:"Glimpse of Us",         artist:"Joji",                 meaning:"أنتِ حكيتِ إنك صرتِ تسمعيها",                      file:"songs/Glimpse_of_Us.mp3",            cover:"images/cover6.JPG"  },
-    { name:"Die for You",           artist:"Joji / TUYO / Mora",   meaning:"جوجي مبدع بتوصيل الإحساس",                         file:"assets/Die_for_You.mp3",                cover:"images/cover7.JPG"  },
+    { name:"Die for You",           artist:"Joji / TUYO / Mora",   meaning:"جوجي مبدع بتوصيل الإحساس",                         file:"assets/Die_for_U.mp3",                cover:"images/cover7.JPG"  },
     { name:"Her",                   artist:"JVKE",                 meaning:"كانت تشتغل لحالها براسي كل ما أشوفكِ",             file:"assets/Her.mp3",                      cover:"assets/cover8.jpeg" },
     { name:"Sunsetz",               artist:"Cigarettes After Sex", meaning:"بعرفش ليش حطتها بس ليش لا",                       file:"songs/Sunsetz.mp3",                  cover:"assets/cover9.jpeg" },
     { name:"Atnasyna",              artist:"—",                    meaning:"كنتِ مرة مصورة فيديو عليها وكنتِ كثير حلوة",       file:"songs/Atnasyna.mp3",                 cover:"assets/cover10.jpg" },
     { name:"Shem el yasmeen",       artist:"مشروع ليلى",           meaning:"هيك صرت أحس بعد ما تقبلت إن كل شيء بيننا مستحيل", file:"assets/Shem_el_yasmeen.mp3",          cover:"images/cover11.jpeg"},
     { name:"The night we met",      artist:"Lord Huron", meaning:"لما طلعنا طلعة بيسترو , هاي اللي كانت براسي لما روحتي وانا بتطلع عليكي", file:"assets/The_night_we_met.mp3", cover:"assets/five.jpg" },
-    { name:"ma to7shneesh",         artist:"امير عيد", meaning:"امنية مستحيل تتحقق للامانة ", file:"assets/ma_to7shneesh.mp3", cover:"images/kay3.jpeg" },
-    { name:"wa7ashteny",            artist:"امير عيد", meaning:"  -بنحب بعض بس الحب مش كفاية ...-", file:"songs/wa7ashteny.mp3", cover:"images/o2.JPG" },
+    { name:"ma to7shneesh",         artist:"امير عيد", meaning:"امنية مستحيل تتحقق للامانة ", file:"assets/mato7shneesh.mp3", cover:"images/kay3.jpeg" },
+    { name:"wa7ashteny",            artist:"امير عيد", meaning:"  -بنحب بعض بس الحب مش كفاية ...-", file:"songs/w7shteny.mp3", cover:"images/o2.JPG" },
   ],
 
 
